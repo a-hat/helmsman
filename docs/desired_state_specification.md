@@ -137,7 +137,7 @@ If a namespace does not already exist, Helmsman will create it.
 
 Options:
 - **protected** : defines if a namespace is protected (true or false). Default false.
-> For the definition of what a protected namespace means, check the [protection guide](how_to/protect_namespaces_and_releases.md)
+> For the definition of what a protected namespace means, check the [protection guide](how_to/misc/protect_namespaces_and_releases.md)
 - **installTiller**: defines if Tiller should be deployed in this namespace or not. Default is false. Any chart desired to be deployed into a namespace with a Tiller deployed, will be deployed using that Tiller and not the one in kube-system unless you use the `TillerNamespace` option (see the [Apps](#apps) section below) to use another Tiller.
 > By default Tiller will be deployed into `kube-system` even if you don't define kube-system in the namespaces section. To prevent deploying Tiller into `kube-system, add kube-system in your namespaces section and set its installTiller to false.
 - **tillerRole**: specify the role to use.  If 'cluster-admin' a clusterrolebinding will be used else a role with a single namespace scope will be created and bound with a rolebinding.
@@ -327,7 +327,7 @@ Options:
 > To use the secrets files you must have the helm-secrets plugin
 - **purge**       : defines whether to use the Helm purge flag when deleting the release. Default is false.
 - **test**        : defines whether to run the chart tests whenever the release is installed. Default is false.
-- **protected**   : defines if the release should be protected against changes. Namespace-level protection has higher priority than this flag. Check the [protection guide](how_to/protect_namespaces_and_releases.md) for more details. Default is false.
+- **protected**   : defines if the release should be protected against changes. Namespace-level protection has higher priority than this flag. Check the [protection guide](how_to/misc/protect_namespaces_and_releases.md) for more details. Default is false.
 - **wait**        : defines whether Helmsman should block execution until all k8s resources are in a ready state. Default is false.
 - **timeout**     : helm timeout in seconds. Default 300 seconds.
 - **noHooks**     : helm noHooks option. If true, it will disable pre/post upgrade hooks. Default is false.
